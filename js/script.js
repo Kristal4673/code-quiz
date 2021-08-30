@@ -1,23 +1,24 @@
-var questions = []
+const quizQuestions = [
+  {
+    quote: "What is the <p> stand for in HTML?",
+    choices: ["Pie", "Paragraph", "paste", "print"],
+    answer: "Paragraph",
+  },
+  {
+    quote: "What is the <script> stand for in HTML?",
+    choices: ["style", "body", "javascript", "none the above"],
+    answer: "javascript",
+  },
+  {
+    quote: "How does a for loop start?",
+    choices: ["for(var i=0; i<)", "if (i <0 )", "while()", "do-while()"],
+    answer: "for(var i=0; i<)",
+  },
+  {
+    quote: "what is a variable look like ?",
+    choices: [" Var $%)=0# ", "var egg rolls. ", "var a=0; ", " A || a"],
+    answer: "var a=0;",
+  },
+];
 
-var score = 0;
-
-for (var i = 0; i < questions.length; i++){
-    //what ever i put in the () is what the user will see 
-    var response = window.prompt(questions[i].prompt);
-    
-    if (response === questions[i].answer) {
-        score++;
-        alert("CORRECT! Great job!"); 
-    }
-    else {
-        alert("Incorrect"); 
-    }
-}
-alert("you got" + score + "/" + questions.length); 
-var questions = [
-    {
-        prompt:
-            "What is the correct semantics for body in a html file?\n (a) <b>\n (b) <body>\n (c) <bod>\n (d) <p>",
-        answer: "b"
-    }, 
+console.log(quizQuestions.length)
