@@ -1,24 +1,21 @@
-const quizQuestions = [
-  {
-    quote: "What is the <p> stand for in HTML?",
-    choices: ["Pie", "Paragraph", "paste", "print"],
-    answer: "Paragraph",
-  },
-  {
-    quote: "What is the <script> stand for in HTML?",
-    choices: ["style", "body", "javascript", "none the above"],
-    answer: "javascript",
-  },
-  {
-    quote: "How does a for loop start?",
-    choices: ["for(var i=0; i<)", "if (i <0 )", "while()", "do-while()"],
-    answer: "for(var i=0; i<)",
-  },
-  {
-    quote: "what is a variable look like ?",
-    choices: [" Var $%)=0# ", "var egg rolls. ", "var a=0; ", " A || a"],
-    answer: "var a=0;",
-  },
-];
-
-console.log(quizQuestions.length)
+// Global variables, questions are stored in questions.js
+var startQuiz = document.querySelector("#startButton");
+var highScore = document.querySelector("#highScoreBtn");
+var timerClock = document.querySelector(".timer");
+var gameCard = document.querySelector("#gameCard");
+var questions = document.querySelector("#questions");
+var answerA = document.querySelector("#answerA");
+var answerB = document.querySelector("#answerB");
+var answerC = document.querySelector("#answerC");
+var answerD= document.querySelector("#answerD");
+var answer = document.querySelector("#answer");
+var feedback = document.querySelector("#feedback");
+var multipleAnswers = document.querySelector("#multipleAnswers");
+var inputForm = document.querySelector("#inputForm");
+var scoreCard = document.querySelector("#scoreCard");
+var scoreButton = document.querySelector("#scoreButton");
+var initials = document.querySelector("#initials");
+var submitButton = document.querySelector("#submitButton");
+var backBtn = document.querySelector("#backButton");
+var clearBtn = document.querySelector("#clearButton");
+var start = document.querySelector(".start");
