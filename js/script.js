@@ -16,6 +16,31 @@ var scoreCard = document.querySelector("#scoreCard");
 var scoreButton = document.querySelector("#scoreButton");
 var initials = document.querySelector("#initials");
 var submitButton = document.querySelector("#submitButton");
-var backBtn = document.querySelector("#backButton");
-var clearBtn = document.querySelector("#clearButton");
+var backButton = document.querySelector("#backButton");
+var clearButton = document.querySelector("#clearButton");
 var start = document.querySelector(".start");
+
+var timeLengthLeft = questionsBank.length * 15;
+var qb = 0;
+var sb = 0;
+var score = 0;
+var scoreList = [];
+var time;
+
+getTotalScore();
+//__________________
+//Running Timer
+function startTimer() {
+    setInt = setInterval(function() {
+        timeLengthLeft--;
+        timerClock.textContent = " Time Left: " + timeLengthLeft;
+        
+        if (timeLengthLeft === 0 || qb >= questionsBank.length) {
+            clearInterval(setInt);
+            startTimer();
+            
+        }
+    }, 1000);
+
+    
+}
