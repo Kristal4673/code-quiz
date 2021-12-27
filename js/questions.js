@@ -1,4 +1,4 @@
-const quizQuestions = [
+var quizQuestions = [
   {
     quote: "What is the <p> stand for in HTML?",
     choices: ["Pie", "Paragraph", "paste", "print"],

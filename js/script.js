@@ -18,9 +18,9 @@ var initials = document.querySelector("#initials");
 var submitButton = document.querySelector("#submitButton");
 var backButton = document.querySelector("#backButton");
 var clearButton = document.querySelector("#clearButton");
-var start = document.querySelector(".start");
+var begin = document.querySelector(".begin");
 
-var timeLengthLeft = questionsBank.length * 15;
+var timeLengthLeft = quizQuestions.length * 15;
 var qb = 0;
 var sb = 0;
 var score = 0;
@@ -35,10 +35,9 @@ function startTimer() {
         timeLengthLeft--;
         timerClock.textContent = " Time Left: " + timeLengthLeft;
         
-        if (timeLengthLeft === 0 || qb >= questionsBank.length) {
-            clearInterval(setInt);
-            startTimer();
-            
+        if (timeLengthLeft === 0 || qb >= quizQuestions.length) {
+          clearInterval(setInt);
+          startTimer();
         }
     }, 1000);
 
