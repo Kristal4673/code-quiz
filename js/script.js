@@ -25,21 +25,77 @@ var qb = 0;
 var sb = 0;
 var score = 0;
 var scoreList = [];
-var time;
+var timeInt;
 
-getTotalScore();
+//getTotalScore();
 //__________________
 //Running Timer
-function startTimer() {
-    setInt = setInterval(function() {
+function timer() {
+    timeInt= setInterval(function() {
         timeLengthLeft--;
         timerClock.textContent = " Time Left: " + timeLengthLeft;
         
         if (timeLengthLeft === 0 || qb >= quizQuestions.length) {
-          clearInterval(setInt);
-          startTimer();
+          clearInterval(timeInt);
+          gameOver();
         }
     }, 1000);
 
     
 }
+// break- function to run through questions 
+function showQuestions() {
+  if (qb < quizQuestions.length) {
+    questions.textContent = quizQuestions[qb].questions; 
+    answerA.textContent = quizQuestions[qb].choices[0]; 
+    answerB.textContent = quizQuestions[qb].choices[1]; 
+    answerC.textContent = quizQuestions[qb].choices[2]; 
+    answerD.textContent = quizQuestions[qb].choices[3]; 
+  } else {
+    gameOver(); 
+  }
+}
+//checking to make sure answer is right or wrong 
+function validateAnswer(event) {
+  if (qb >= quizQuestions.length) {
+
+    gameOver(); 
+    clearInterval(timeInt);
+  } else {
+    if (event === quizQuestions[qb].answer) {
+      feedback.textContent = "Correct Great Job!"; 
+    } else {
+      timeLengthLeft -= 10; 
+      feedback.textContent = "Sorry! That is wrong!"
+    }
+    score = timeLengthLeft; 
+    qb++; 
+    showQuestions(); 
+  }
+}
+// function gameOver() { 
+//   scoreButton.innerHTML = score; 
+//   scoreButton.style.display = "inline-block"; 
+//   gameCard.classList.add("hide"); 
+//   inputForm.classList.remove("hide"); 
+//   timerClock.classList.add("hide"); 
+//   highScore.classList.add("hide"); 
+  
+// }
+
+
+// adding begin Quiz eventhandlers
+
+startQuiz.addEventListener("click", function (event) {
+timer();
+  showQuestions();
+  begin.classList.add("hide");
+  gameCard.classList.remove("hide");
+  highScore.style.display = "none";
+  scoreCard.classList.add("hide");
+});
+gameCard.addEventListener("click", function (event) {
+  var event = event.target;
+  validateAnswer(event.textContent.trim());
+});
+
