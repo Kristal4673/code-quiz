@@ -60,15 +60,12 @@ p {
 /************************/
 
 .container {
-  /* width: 100vw;
-  height: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  max-width: 80rem;
-  margin: 0 auto; */
   width: 800px;
-  max-width: 80%;
+  height: 500px;
+  display: flex; 
+  justify-content: center;
+  max-width: 50Px;
+  margin: 0 auto; 
   background-color: yellow;
   border-radius: 5px;
   padding: 10px;
@@ -103,7 +100,7 @@ p {
   -webkit-border-radius: 1rem;
 }
 
-#initials {
+#initials1 {
   background-color: rgb(212, 166, 174);
   border-color: purple;
   height: 3rem;
