@@ -36,7 +36,7 @@ github: https://github.com/Kristal4673/js_Quizlet.git
 Deployed Link: https://kristal4673.github.io/js_Quizlet/
 
 ## Picture github Page 
-![This is an image](Screen Shot 2022-01-04 at 10.15.01 AM.png)
+![This is an image](picture/readmegitpagelink.png)
 
 
 
